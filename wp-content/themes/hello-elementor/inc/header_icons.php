@@ -44,6 +44,10 @@ function header_icons_from_cpt() {
         }
     }
 
+    global $wp;
+    $current_url = home_url( add_query_arg( array(), $wp->request ) );
+    $current_url = untrailingslashit($current_url);
+
     ob_start(); ?>
 
     <div class="header-icons">
@@ -52,6 +56,7 @@ function header_icons_from_cpt() {
 
             $icon_type  = get_field('icon_type');   // cart | wishlist | other
             $show_count = get_field('show_count');
+            $icon_link  = get_field('icon_link');
 
             // Decide which count to show
             $count = 0;
@@ -60,9 +65,14 @@ function header_icons_from_cpt() {
             } elseif ($icon_type === 'wishlist') {
                 $count = $wishlist_count;
             }
+
+            // Active Class Logic
+            $is_active = ( untrailingslashit(esc_url($icon_link)) === $current_url );
+            $active_class = $is_active ? ' active' : '';
+            $type_class = $icon_type ? ' icon-type-' . $icon_type : '';
         ?>
 
-            <a href="<?php echo esc_url( get_field('icon_link') ); ?>" class="icon-btn">
+            <a href="<?php echo esc_url( $icon_link ); ?>" class="icon-btn<?php echo esc_attr( $active_class . $type_class ); ?>">
                 <i class="<?php echo esc_attr( get_field('icon_class') ); ?>"></i>
 
                 <?php if ( $show_count && is_numeric( $count ) && intval( $count ) > 0 ): ?>
