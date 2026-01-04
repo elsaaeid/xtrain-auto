@@ -83,6 +83,7 @@ html[dir="ltr"] .single-product-badge {
     flex-direction: column;
     padding: 20px;
     background: var(--color-white);
+    position: relative;
 }
 
 .product-gallery-column {
@@ -1322,3 +1323,4 @@ html[dir="rtl"] .comment-form-rating .stars span {
         font-size: 12px;
     }
 }
+
