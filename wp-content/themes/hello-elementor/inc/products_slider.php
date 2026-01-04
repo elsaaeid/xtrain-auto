@@ -127,7 +127,14 @@ function products_slider_shortcode($atts) {
                         $product_title = get_the_title();
                         $product_link = get_permalink($product_id);
                         $product_image = get_the_post_thumbnail($product_id, 'medium');
-                        $product_price = $product_obj->get_price_html();
+                        // Get product price in current language/currency
+                        if ( function_exists( 'icl_object_id' ) && function_exists( 'wcml_multi_currency' ) ) {
+                            $product_price = wcml_multi_currency()->prices->get_product_price_in_currency( $product_obj->get_id(), null, true );
+                        } elseif ( function_exists( 'pll_current_language' ) && function_exists( 'wcml_multi_currency' ) ) {
+                            $product_price = wcml_multi_currency()->prices->get_product_price_in_currency( $product_obj->get_id(), null, true );
+                        } else {
+                            $product_price = $product_obj->get_price_html();
+                        }
                         $product_rating = $product_obj->get_average_rating();
                         $product_stock = $product_obj->get_stock_quantity();
                         $is_on_sale = $product_obj->is_on_sale();
