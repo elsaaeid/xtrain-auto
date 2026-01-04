@@ -2,3 +2,7 @@
 Stack trace:
 #0 {main}
   thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor-pro/modules/floating-buttons/base/widget-contact-button-base-pro.php on line 8
+[04-Jan-2026 19:10:52 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Modules\FloatingButtons\Base\Widget_Floating_Bars_Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor-pro/modules/floating-buttons/base/widget-floating-bars-base-pro.php:8
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor-pro/modules/floating-buttons/base/widget-floating-bars-base-pro.php on line 8
