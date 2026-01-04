@@ -1372,7 +1372,15 @@ function header_search_callback() {
             echo '<div class="result-info">';
             echo '<span class="result-title">' . esc_html(get_the_title()) . '</span>';
             if ($product) {
-                echo '<strong class="result-price">' . $product->get_price_html() . '</strong>';
+                // Show price in current language/currency
+                if ( function_exists( 'icl_object_id' ) && function_exists( 'wcml_multi_currency' ) ) {
+                    $price_html = wcml_multi_currency()->prices->get_product_price_in_currency( $product->get_id(), null, true );
+                } elseif ( function_exists( 'pll_current_language' ) && function_exists( 'wcml_multi_currency' ) ) {
+                    $price_html = wcml_multi_currency()->prices->get_product_price_in_currency( $product->get_id(), null, true );
+                } else {
+                    $price_html = $product->get_price_html();
+                }
+                echo '<strong class="result-price">' . $price_html . '</strong>';
             }
             echo '</div>';
             echo '</a>';
