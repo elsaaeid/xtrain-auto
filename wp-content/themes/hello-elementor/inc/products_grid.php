@@ -13,7 +13,7 @@ function products_grid_shortcode($atts) {
 
     // Shortcode attributes
     $atts = shortcode_atts(array(
-        'limit'      => 48,
+        'limit'      => 12,
         'orderby'    => 'popularity',
         'order'      => 'DESC',
         'category'   => '',
@@ -25,7 +25,7 @@ function products_grid_shortcode($atts) {
     $product_categories = get_terms(array(
         'taxonomy'   => 'product_cat',
         'hide_empty' => true,
-        'number'     => 4,
+        'number'     => 3,
         'orderby'    => 'count',
         'order'      => 'DESC',
     ));
