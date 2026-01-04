@@ -1154,10 +1154,7 @@ html[dir="rtl"] .comment-form-rating .stars span {
 
 /* Labels */
 .single-product .comment-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    text-align: right;
+    display: none;
 }
 
 /* Cookies checkbox */
@@ -1323,4 +1320,3 @@ html[dir="rtl"] .comment-form-rating .stars span {
         font-size: 12px;
     }
 }
-
