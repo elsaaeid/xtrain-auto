@@ -1,0 +1,272 @@
+
+html[dir="rtl"] #exact-search-input {
+    text-align: right;
+}
+html[dir="rtl"] .exact-search-icon {
+    left: auto;
+    right: 18px;
+}
+html[dir="ltr"] .exact-search-icon {
+    right: auto;
+    left: 18px;
+}
+
+html[dir="ltr"] #exact-search-input {
+    text-align: left;
+}
+
+.exact-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Desktop Toggle (Hidden) */
+.exact-search-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--color-dark);
+}
+
+.exact-search-container {
+    position: relative;
+    flex-grow: 1;
+    max-width: 520px;
+}
+
+.exact-search-field {
+    position: relative;
+    width: 100%;
+}
+
+#exact-search-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 50px;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    font-size: 16px;
+    color: var(--color-dark);
+    transition: all 0.3s ease;
+}
+
+#exact-search-input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#exact-search-input::placeholder {
+    color: var(--color-no-result);
+}
+
+/* Search icon inside the input field wrapper */
+.exact-search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-search-icon);
+    stroke-width: 2;
+    fill: none;
+    pointer-events: auto;
+    cursor: pointer;
+    line-height: 0;
+}
+
+html[dir="rtl"] .exact-search-icon {
+    right: 18px;
+    left: auto;
+}
+
+/* RESULTS LIST */
+#exact-search-results {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: var(--color-bg);
+    border-radius: 12px;
+    box-shadow: var(--color-shadow);
+    z-index: 1000;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    display: none;
+}
+
+#exact-search-results.has-results {
+    display: block;
+}
+
+
+.exact-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exact-results-list li {
+    border-bottom: 1px solid var(--color-bg-hover);
+}
+
+.exact-results-list li:last-child {
+    border-bottom: none;
+}
+
+.exact-results-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: background 0.2s;
+}
+
+.exact-results-list a:hover {
+    background: var(--color-bg-hover);
+}
+
+.exact-results-list img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.result-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-price {
+    font-size: 13px;
+    color: var(--color-accent);
+}
+
+.exact-no-results {
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-no-result);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 991px) {
+    .exact-search-wrapper {
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .exact-search-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        color: var(--color-search-icon);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .exact-search-toggle svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .exact-search-container {
+        display: none !important;
+        /* Hide by default on mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        margin: 0;
+        padding: 12px 15px;
+        background: var(--color-bg);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        z-index: 10001;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Show when active */
+    .exact-search-wrapper.is-active .exact-search-container {
+        display: block !important;
+    }
+
+    .exact-search-wrapper.is-active::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.62);
+        z-index: 10000;
+    }
+
+    .exact-search-field {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    #exact-search-input {
+        width: 100%;
+        height: 48px;
+        border-radius: 12px;
+        padding: 0 45px;
+        text-align: right;
+        font-size: 15px;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-current);
+        display: block;
+    }
+
+    .exact-search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        color: var(--color-search-icon);
+        z-index: 2;
+    }
+
+    html[dir="rtl"] .exact-search-icon {
+        right: 15px;
+        left: auto;
+    }
+
+    #exact-search-results {
+        position: static;
+        margin-top: 10px;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--color-border);
+        max-height: 70vh;
+        overflow-y: auto;
+        /* display: block; removed, now controlled by JS/class */
+    }
+
+    .exact-results-list a {
+        padding: 12px 10px;
+    }
+}

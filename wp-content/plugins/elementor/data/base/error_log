@@ -1,0 +1,8 @@
+[04-Jan-2026 15:08:13 UTC] PHP Fatal error:  Uncaught Error: Class "WP_REST_Controller" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/data/base/controller.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/data/base/controller.php on line 9
+[04-Jan-2026 15:08:16 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Data\Base\Endpoint" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/data/base/sub-endpoint.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/data/base/sub-endpoint.php on line 7

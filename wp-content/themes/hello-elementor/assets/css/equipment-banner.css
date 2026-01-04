@@ -1,0 +1,226 @@
+/* Equipment Banner Styles */
+
+html[dir="ltr"] .equipment-banner-content {
+    flex-direction: row-reverse;
+}
+
+.equipment-banner-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 12px;
+}
+
+.equipment-banner-bg {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.equipment-banner-thumb {
+    max-width: 310px;
+    margin-bottom: -90px;
+    margin-right: 160px;
+}
+
+.equipment-banner-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.equipment-banner-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.equipment-banner-title span {
+    color: #F47C33;
+    font-weight: 900;
+}
+
+.equipment-banner-desc {
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: #e0e0e0;
+    letter-spacing: 0.01em;
+}
+
+.equipment-banner-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: var(--color-dark);
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 13px;
+    box-shadow: var(--color-shadow);
+    transition: 0.2s all ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.equipment-banner-btn:hover {
+    background: var(--color-transparent) !important;
+    border: 1px solid var(--color-primary) !important;
+    color: var(--color-white) !important;
+    transition-property: background, border, color;
+}
+
+.equipment-banner-thumb img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    .equipment-banner-text {
+        width: 50%;
+        padding-right: 24px;
+    }
+
+    .equipment-banner-title {
+        font-size: 24px;
+    }
+
+    .equipment-banner-desc {
+        font-size: 13px;
+    }
+
+    .equipment-banner-thumb {
+        margin-bottom: -90px;
+        margin-right: 53px;
+    }
+}
+
+@media (max-width: 900px) {
+    .equipment-banner-text {
+        max-width: 100%;
+        padding-right: 12px;
+        margin-bottom: 18px;
+    }
+
+    .equipment-banner-thumb {
+        max-width: 200px;
+        margin-bottom: -77px;
+        margin-right: 60px;
+    }
+
+    .equipment-banner-title {
+        font-size: 15px;
+    }
+
+    .equipment-banner-desc {
+        font-size: 10px;
+    }
+
+    .equipment-banner-btn {
+        padding: 6px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipment-banner-bg {
+        min-height: 120px;
+        border-radius: 0;
+    }
+
+    .equipment-banner-content {
+        padding: 8px 0 8px 0;
+    }
+
+    .equipment-banner-title {
+        font-size: 12px;
+    }
+
+    .equipment-banner-desc {
+        font-size: 9px;
+    }
+
+    .equipment-banner-btn {
+        padding: 4px;
+        font-size: 9px;
+    }
+
+    .equipment-banner-text {
+        flex-direction: column;
+    }
+
+    .equipment-banner-thumb {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .equipment-banner-thumb {
+        max-width: 150px;
+        margin-right: 45px;
+    }
+}
+
+@media (max-width: 450px) {
+    .equipment-banner-thumb {
+        margin-right: 20px;
+    }
+
+    .equipment-banner-title {
+        font-size: 10px;
+    }
+
+    .equipment-banner-desc {
+        font-size: 8px;
+    }
+
+    .equipment-banner-btn {
+        padding: 3px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 414px) {
+    .equipment-banner-thumb {
+        max-width: 150px;
+    }
+
+    .equipment-banner-title {
+        font-size: 9px;
+    }
+
+    .equipment-banner-desc {
+        font-size: 7px;
+    }
+
+    .equipment-banner-btn {
+        padding: 3px;
+        font-size: 7px;
+    }
+}
+
+
+@media (max-width: 300px) {
+    .equipment-banner-title {
+        font-size: 5px;
+    }
+
+    .equipment-banner-desc {
+        font-size: 5px;
+    }
+
+    .equipment-banner-btn {
+        padding: 3px;
+        font-size: 5px;
+    }
+}

@@ -1,0 +1,4 @@
+[04-Jan-2026 15:09:57 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Elementor\Core\Utils\ABSPATH" in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/utils/plugins-manager.php:5
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/utils/plugins-manager.php on line 5

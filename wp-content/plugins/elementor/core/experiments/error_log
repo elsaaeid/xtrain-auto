@@ -1,0 +1,4 @@
+[04-Jan-2026 15:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Modules\System_Info\Reporters\Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/experiments/experiments-reporter.php:13
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/experiments/experiments-reporter.php on line 13

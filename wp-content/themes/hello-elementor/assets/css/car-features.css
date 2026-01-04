@@ -1,0 +1,233 @@
+/* ===============================
+   Car Features Display Styles
+   =============================== */
+
+.car-features-wrapper {
+    width: 100%;
+    padding: 60px 20px;
+    background: var(--color-bg-hover, #eef2f7);
+}
+
+.car-features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+/* White Card Container (holds 3 features) */
+.car-features-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 35px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Individual Feature Item */
+.car-feature-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--color-border, #e8ecf0);
+}
+
+/* Remove border from last item */
+.car-feature-item.last {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* First item has no top padding */
+.car-feature-item:first-child {
+    padding-top: 0;
+}
+
+/* Feature Number Circle */
+.car-feature-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    font-weight: 600;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.car-feature-number span {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-secondary, #6c7a8a);
+    transition: color 0.3s ease;
+}
+
+.car-feature-item:hover .car-feature-number {
+    border-color: var(--color-primary, #F47C33);
+    background: var(--color-primary, #F47C33);
+}
+
+.car-feature-item:hover .car-feature-number span {
+    color: #fff;
+}
+
+/* Feature Content */
+.car-feature-content {
+    flex: 1;
+    text-align: right;
+}
+
+.car-feature-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary, #1a2b3c);
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.car-feature-item:hover .car-feature-title {
+    color: var(--color-primary, #F47C33);
+}
+
+.car-feature-desc {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text-secondary, #6c7a8a);
+    line-height: 1.7;
+}
+
+/* ===============================
+   Responsive Styles
+   =============================== */
+
+@media (max-width: 992px) {
+    .car-features-wrapper {
+        padding: 50px 20px;
+    }
+
+    .car-features-container {
+        gap: 25px;
+    }
+
+    .car-features-card {
+        padding: 25px 30px;
+    }
+
+    .car-feature-title {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-features-wrapper {
+        padding: 40px 15px;
+    }
+
+    .car-features-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .car-features-card {
+        padding: 25px;
+    }
+
+    .car-feature-item {
+        padding: 20px 0;
+    }
+
+    .car-feature-number {
+        width: 44px;
+        height: 44px;
+    }
+
+    .car-feature-number span {
+        font-size: 15px;
+    }
+
+    .car-feature-title {
+        font-size: 16px;
+    }
+
+    .car-feature-desc {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-features-wrapper {
+        padding: 30px 10px;
+    }
+
+    .car-features-card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .car-feature-item {
+        gap: 15px;
+        padding: 18px 0;
+    }
+
+    .car-feature-number {
+        width: 40px;
+        height: 40px;
+    }
+
+    .car-feature-number span {
+        font-size: 14px;
+    }
+
+    .car-feature-title {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .car-feature-desc {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+/* ===============================
+   RTL Support (Arabic)
+   =============================== */
+
+[dir="rtl"] .car-feature-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .car-feature-content {
+    text-align: right;
+}
+
+/* LTR Support */
+[dir="ltr"] .car-feature-item {
+    flex-direction: row;
+}
+
+[dir="ltr"] .car-feature-content {
+    text-align: left;
+}
+
+/* ===============================
+   Animation Support
+   =============================== */
+
+.car-features-card.animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.car-features-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}

@@ -1,0 +1,8 @@
+[04-Jan-2026 12:34:01 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Widget_Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/floating-buttons/base/widget-floating-bars-base.php:15
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/floating-buttons/base/widget-floating-bars-base.php on line 15
+[04-Jan-2026 12:35:58 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Widget_Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/floating-buttons/base/widget-contact-button-base.php:17
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/floating-buttons/base/widget-contact-button-base.php on line 17

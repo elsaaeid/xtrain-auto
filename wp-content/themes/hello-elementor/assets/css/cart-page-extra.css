@@ -1,0 +1,105 @@
+.saved-addresses-list {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.address-radio-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    color: #2D3E4E !important;
+}
+
+.address-radio-row input[type="radio"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    border: 1.5px solid #CBD5E1 !important;
+    border-radius: 50% !important;
+    outline: none !important;
+    position: relative !important;
+    margin: 0 !important;
+}
+
+.address-radio-row input[type="radio"]:checked {
+    border-color: #EA7739 !important;
+    border-width: 5px !important;
+}
+
+.shipping-cost-display ul#shipping_method {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.shipping-cost-display .amount {
+    font-weight: 700 !important;
+    color: #2D3E4E !important;
+}
+
+/* Cart item thumbnail and responsive layout fixes */
+.custom-cart-layout .product-info-flex {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.custom-cart-layout .item-thumb {
+    width: 72px !important;
+    height: 72px !important;
+    flex: 0 0 72px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    border-radius: 6px !important;
+}
+
+.custom-cart-layout .item-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.custom-cart-layout .item-details {
+    min-width: 0 !important; /* allow text truncation */
+}
+
+/* Smaller screens: reduce thumbnail and stack quantity/price as needed */
+@media (max-width: 768px) {
+    .custom-cart-layout {
+        gap: 12px !important;
+    }
+
+    .custom-cart-layout .item-thumb {
+        width: 56px !important;
+        height: 56px !important;
+        flex: 0 0 56px !important;
+    }
+
+    .custom-cart-layout table.shop_table td.product-quantity,
+    .custom-cart-layout table.shop_table td.product-price,
+    .custom-cart-layout table.shop_table td.product-subtotal {
+        white-space: nowrap !important;
+    }
+
+    .custom-cart-layout .product-info-flex {
+        gap: 8px !important;
+    }
+}
+
+/* Very small screens: make layout more vertical for readability */
+@media (max-width: 420px) {
+    .custom-cart-layout table.shop_table thead { display: none !important; }
+    .custom-cart-layout table.shop_table tr.cart-item-row { display: block !important; border-bottom: 1px solid #eee !important; padding-bottom: 12px !important; }
+    .custom-cart-layout table.shop_table td { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+    .custom-cart-layout table.shop_table td.product-name { padding: 8px 0 !important; }
+}

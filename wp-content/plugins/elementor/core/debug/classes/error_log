@@ -1,0 +1,12 @@
+[04-Jan-2026 15:11:03 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Core\Debug\Classes\Inspection_Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/debug/classes/htaccess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/debug/classes/htaccess.php on line 7
+[04-Jan-2026 15:11:05 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Core\Debug\Classes\Inspection_Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/debug/classes/theme-missing.php:6
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/debug/classes/theme-missing.php on line 6
+[04-Jan-2026 15:11:41 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Core\Debug\Classes\Inspection_Base" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/debug/classes/shop-page-edit.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/debug/classes/shop-page-edit.php on line 4

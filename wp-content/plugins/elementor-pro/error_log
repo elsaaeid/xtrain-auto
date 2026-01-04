@@ -1,0 +1,4 @@
+[04-Jan-2026 18:42:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function update_option() in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor-pro/elementor-pro.php:14
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor-pro/elementor-pro.php on line 14

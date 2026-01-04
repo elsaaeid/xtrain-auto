@@ -1,0 +1,636 @@
+.comments-area a,
+.page-content a {
+    text-decoration: none
+}
+
+.alignright {
+    float: right;
+    margin-left: 1rem
+}
+
+.alignleft {
+    float: left;
+    margin-right: 1rem
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-inline: auto
+}
+
+.alignwide {
+    margin-inline: -80px
+}
+
+.alignfull {
+    margin-inline: calc(50% - 50vw);
+    max-width: 100vw
+}
+
+.alignfull,
+.alignfull img {
+    width: 100vw
+}
+
+.wp-caption {
+    margin-block-end: 1.25rem;
+    max-width: 100%
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px
+}
+
+.wp-caption img {
+    display: block;
+    margin-inline: auto
+}
+
+.wp-caption-text {
+    margin: 0
+}
+
+.gallery-caption {
+    display: block;
+    font-size: .8125rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: .75rem
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto
+}
+
+.sticky {
+    display: block;
+    position: relative
+}
+
+.bypostauthor {
+    font-size: inherit
+}
+
+.hide {
+    display: none !important
+}
+
+.post-password-form {
+    margin: 50px auto;
+    max-width: 500px
+}
+
+.post-password-form p {
+    align-items: flex-end;
+    display: flex;
+    width: 100%
+}
+
+.post-password-form [type=submit] {
+    margin-inline-start: 3px
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important
+}
+
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #333;
+    display: block;
+    font-size: 1rem;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 12px 24px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000
+}
+
+.post .entry-title a {
+    text-decoration: none
+}
+
+.post .wp-post-image {
+    max-height: 500px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%
+}
+
+@media(max-width:991px) {
+    .post .wp-post-image {
+        max-height: 400px
+    }
+}
+
+@media(max-width:575px) {
+    .post .wp-post-image {
+        max-height: 300px
+    }
+}
+
+#comments .comment-list {
+    font-size: .9em;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+#comments .comment,
+#comments .pingback {
+    position: relative
+}
+
+#comments .comment .comment-body,
+#comments .pingback .comment-body {
+    border-block-end: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    padding-block-end: 30px;
+    padding-block-start: 30px;
+    padding-inline-end: 0;
+    padding-inline-start: 60px
+}
+
+#comments .comment .avatar,
+#comments .pingback .avatar {
+    border-radius: 50%;
+    left: 0;
+    margin-inline-end: 10px;
+    position: absolute
+}
+
+body.rtl #comments .comment .avatar,
+body.rtl #comments .pingback .avatar,
+html[dir=rtl] #comments .comment .avatar,
+html[dir=rtl] #comments .pingback .avatar {
+    left: auto;
+    right: 0
+}
+
+#comments .comment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-block-end: .9rem
+}
+
+#comments .comment-metadata,
+#comments .reply {
+    font-size: 11px;
+    line-height: 1
+}
+
+#comments .children {
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 30px;
+    position: relative
+}
+
+#comments .children li:last-child {
+    padding-block-end: 0
+}
+
+#comments ol.comment-list .children:before {
+    content: "↪";
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    left: 0;
+    line-height: 100%;
+    position: absolute;
+    top: 45px;
+    width: auto
+}
+
+body.rtl #comments ol.comment-list .children:before,
+html[dir=rtl] #comments ol.comment-list .children:before {
+    content: "↩";
+    left: auto;
+    right: 0
+}
+
+@media(min-width:768px) {
+
+    #comments .comment-author,
+    #comments .comment-metadata {
+        line-height: 1
+    }
+}
+
+@media(max-width:767px) {
+    #comments .comment .comment-body {
+        padding: 30px 0
+    }
+
+    #comments .children {
+        padding-inline-start: 20px
+    }
+
+    #comments .comment .avatar {
+        float: left;
+        position: inherit
+    }
+
+    body.rtl #comments .comment .avatar,
+    html[dir=rtl] #comments .comment .avatar {
+        float: right
+    }
+}
+
+.page-header .entry-title,
+.site-footer .footer-inner,
+.site-footer:not(.dynamic-footer),
+.site-header .header-inner,
+.site-header:not(.dynamic-header),
+body:not([class*=elementor-page-]) .site-main {
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    width: 100%
+}
+
+@media(max-width:575px) {
+
+    .page-header .entry-title,
+    .site-footer .footer-inner,
+    .site-footer:not(.dynamic-footer),
+    .site-header .header-inner,
+    .site-header:not(.dynamic-header),
+    body:not([class*=elementor-page-]) .site-main {
+        padding-inline-end: 10px;
+        padding-inline-start: 10px
+    }
+}
+
+@media(min-width:576px) {
+
+    .page-header .entry-title,
+    .site-footer .footer-inner,
+    .site-footer:not(.dynamic-footer),
+    .site-header .header-inner,
+    .site-header:not(.dynamic-header),
+    body:not([class*=elementor-page-]) .site-main {
+        max-width: 500px
+    }
+
+    .site-footer.footer-full-width .footer-inner,
+    .site-header.header-full-width .header-inner {
+        max-width: 100%
+    }
+}
+
+@media(min-width:768px) {
+
+    .page-header .entry-title,
+    .site-footer .footer-inner,
+    .site-footer:not(.dynamic-footer),
+    .site-header .header-inner,
+    .site-header:not(.dynamic-header),
+    body:not([class*=elementor-page-]) .site-main {
+        max-width: 600px
+    }
+
+    .site-footer.footer-full-width,
+    .site-header.header-full-width {
+        max-width: 100%
+    }
+}
+
+@media(min-width:992px) {
+
+    .page-header .entry-title,
+    .site-footer .footer-inner,
+    .site-footer:not(.dynamic-footer),
+    .site-header .header-inner,
+    .site-header:not(.dynamic-header),
+    body:not([class*=elementor-page-]) .site-main {
+        max-width: 800px
+    }
+
+    .site-footer.footer-full-width,
+    .site-header.header-full-width {
+        max-width: 100%
+    }
+}
+
+@media(min-width:1200px) {
+
+    .page-header .entry-title,
+    .site-footer .footer-inner,
+    .site-footer:not(.dynamic-footer),
+    .site-header .header-inner,
+    .site-header:not(.dynamic-header),
+    body:not([class*=elementor-page-]) .site-main {
+        max-width: 1140px
+    }
+
+    .site-footer.footer-full-width,
+    .site-header.header-full-width {
+        max-width: 100%
+    }
+}
+
+.site-header+.elementor {
+    min-height: calc(100vh - 320px)
+}
+
+/* ===== HEADER ===== */
+.xtrain-header {
+    font-family: inherit;
+    direction: rtl
+}
+
+.xtrain-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.xtrain-icons {
+    display: flex;
+    align-items: anchor-center;
+}
+
+.xtrain-top {
+    background: #ffffff;
+    padding: 8px 0
+}
+
+.xtrain-search {
+    flex: 1;
+    margin: 0 20px
+}
+
+.xtrain-search input[type="search"] {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none
+}
+
+.xtrain-brand {
+    color: #fff;
+    font-weight: bold
+}
+
+.xtrain-bottom {
+    background: #fff;
+    border-bottom: 1px solid #eee
+}
+
+.xtrain-logo img {
+    max-height: 45px
+}
+
+.xtrain-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0
+}
+
+.xtrain-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500
+}
+
+.xtrain-mobile {
+    display: none;
+    font-size: 22px;
+    cursor: pointer
+}
+
+@media(max-width:768px) {
+    .xtrain-nav {
+        display: none
+    }
+
+    .xtrain-mobile {
+        display: block
+    }
+}
+
+.top-language-switcher {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 13px;
+    gap: 10px
+}
+
+.top-language-switcher .trp-language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important
+}
+
+.top-language-switcher .trp-language-switcher span,
+.top-language-switcher .trp-language-switcher a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 2px;
+    font-size: 13px;
+    padding: 0 2px
+}
+
+.top-language-switcher .trp-language-switcher a:hover {
+    text-decoration: underline
+}
+
+.top-language-switcher .trp-language-switcher span.trp-ls-language-name {
+    font-weight: 400;
+    margin: 0 2px
+}
+
+.top-language-switcher .trp-ls-shortcode-language {
+    display: flex;
+    align-items: center;
+    gap: 2px
+}
+
+.topnav {
+    background-color: #EA7739;
+}
+
+.xtrain-icons {
+    display: flex;
+    align-items: center;
+}
+
+.xtrain-icons a {
+    color: #fff;
+    margin-left: 12px;
+    font-size: 18px;
+    display: flex;
+    background: #EA7739;
+    height: 30px;
+    width: 30px;
+    padding: 7px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide TranslatePress dropdown arrow and force inline languages */
+.top-language-switcher .trp-language-switcher .trp-ls-dropdown {
+    display: none !important;
+}
+
+.top-language-switcher .trp-language-switcher .trp-shortcode-arrow,
+.top-language-switcher .trp-language-switcher .trp-switcher-dropdown-list {
+    display: none !important;
+}
+
+.top-language-switcher .trp-language-switcher .trp-language-item {
+    display: inline-flex !important;
+    align-items: center;
+    color: #fff !important;
+    background: none !important;
+    border: none !important;
+    margin: 0 5px !important;
+    font-size: 13px !important;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0 2px !important;
+}
+
+.top-language-switcher .trp-language-switcher .trp-language-item.trp-language-item__current {
+    font-weight: 700;
+    text-decoration: underline;
+    pointer-events: none;
+}
+
+.top-language-switcher .trp-language-switcher .trp-language-item-name {
+    margin: 0 2px;
+}
+
+/* ===== WooCommerce: My Account layout (CSS-only) =====
+   Responsive sidebar navigation + content area.
+   This targets plugin markup only and does NOT create template overrides.
+*/
+.woocommerce-account .woocommerce-MyAccount {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    flex: 0 0 260px;
+    max-width: 260px;
+}
+
+/* Place nav on the right for RTL, left for LTR by reversing direction */
+html[dir="rtl"] .woocommerce-account .woocommerce-MyAccount {
+    flex-direction: row-reverse;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation li {
+    margin-bottom: 8px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation a {
+    display: block;
+    padding: 9px 12px;
+    color: var(--color-dark, #333);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: color .12s ease, background .12s ease;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation li.is-active>a,
+.woocommerce-account .woocommerce-MyAccount-navigation a[aria-current="page"] {
+    color: var(--color-accent, #f47c33);
+    font-weight: 700;
+    background: rgba(244, 124, 51, 0.06);
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    padding: 22px 0;
+}
+
+/* Small screens: stack and restore comfortable padding */
+@media (max-width: 768px) {
+    .woocommerce-account .woocommerce-MyAccount {
+        display: block;
+        padding: 0 12px;
+        max-width: 100%;
+    }
+
+    .woocommerce-account .woocommerce-MyAccount-navigation {
+        max-width: 100%;
+        margin-bottom: 14px;
+    }
+
+    .woocommerce-account .woocommerce-MyAccount-content {
+        padding: 12px 0;
+    }
+}
+
+/* Ensure headings inside account area look tidy */
+.woocommerce-account h1,
+.woocommerce-account h2,
+.woocommerce-account h3 {
+    margin-top: 0;
+}
+
+
+/* Remove page padding so site content spans edge-to-edge where desired
+   Overrides theme defaults that add inline padding around .site-main */
+body:not([class*=elementor-page-]) .site-main {
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Ensure small-screen override also removed (theme sets 10px earlier) */
+@media (max-width: 575px) {
+    body:not([class*=elementor-page-]) .site-main {
+        padding-inline-start: 0 !important;
+        padding-inline-end: 0 !important;
+    }
+}
+
+/* Remove extra padding on page header containers */
+.page-header .entry-title {
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+}

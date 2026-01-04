@@ -1,0 +1,11 @@
+# WordPress uploads & backups (DO NOT TRACK)
+wp-content/uploads/
+wp-content/ai1wm-backups/
+wp-content/wpvividbackups/
+wp-content/debug.log
+
+# Large files
+*.mp4
+*.zip
+*.wpress
+*.log

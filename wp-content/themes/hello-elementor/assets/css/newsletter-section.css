@@ -1,0 +1,207 @@
+/**
+ * Newsletter Section Styles
+ * RTL-first design for Arabic websites
+ */
+
+/* ============================================
+   Newsletter Wrapper
+   ============================================ */
+.newsletter-wrapper {
+    width: 100%;
+    padding: 50px 20px;
+    direction: rtl;
+}
+
+.newsletter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+/* ============================================
+   Newsletter Image
+   ============================================ */
+.newsletter-image {
+    flex: 0 0 auto;
+    max-width: 320px;
+    position: relative;
+    will-change: transform, opacity;
+    transform-origin: center center;
+    overflow: visible;
+}
+
+.newsletter-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    will-change: transform;
+    transform-origin: center center;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    transition: filter 0.3s ease;
+}
+
+.newsletter-image:hover img {
+    filter: drop-shadow(0 20px 40px rgba(234, 119, 57, 0.25));
+}
+
+/* Particle styles */
+.newsletter-particle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+/* ============================================
+   Newsletter Content
+   ============================================ */
+.newsletter-content {
+    flex: 1;
+    text-align: center;
+    max-width: 600px;
+}
+
+.newsletter-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+}
+
+.newsletter-desc {
+    font-size: 15px;
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* ============================================
+   Newsletter Form (Optional)
+   ============================================ */
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    padding: 14px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 15px;
+    direction: ltr;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(244, 124, 51, 0.1);
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: #9ca3af;
+}
+
+.newsletter-form button {
+    padding: 14px 32px;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: #dc6a25;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media screen and (max-width: 992px) {
+    .newsletter-container {
+        gap: 40px;
+    }
+
+    .newsletter-image {
+        max-width: 260px;
+    }
+
+    .newsletter-title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter-wrapper {
+        padding: 40px 16px;
+    }
+
+    .newsletter-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .newsletter-image {
+        max-width: 220px;
+        order: -1;
+    }
+
+    .newsletter-content {
+        max-width: 100%;
+    }
+
+    .newsletter-title {
+        font-size: 24px;
+    }
+
+    .newsletter-desc {
+        font-size: 14px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .newsletter-wrapper {
+        padding: 30px 12px;
+    }
+
+    .newsletter-image {
+        max-width: 180px;
+    }
+
+    .newsletter-title {
+        font-size: 20px;
+    }
+
+    .newsletter-desc {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,596 @@
+/* WooCommerce My Account - Comprehensive User Area Styling */
+
+/* Hide Page Titles on Account Page to prevent double headers */
+.woocommerce-account .entry-title,
+.woocommerce-account .page-header {
+    display: none !important;
+}
+
+/* Page Wrapper */
+.woocommerce-account .woocommerce {
+    display: flex;
+    flex-direction: row-reverse;
+    /* RTL by default for this site: Sidebar Right, Content Left */
+    gap: 40px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 900px) {
+    .woocommerce-account .woocommerce {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* 1. Navigation Sidebar */
+.woocommerce-MyAccount-navigation {
+    width: 280px;
+    flex-shrink: 0;
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    border: 1px solid var(--color-bg-light);
+}
+
+@media screen and (max-width: 900px) {
+    .woocommerce-MyAccount-navigation {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.woocommerce-MyAccount-navigation ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.woocommerce-MyAccount-navigation li {
+    margin-bottom: 8px;
+}
+
+.woocommerce-MyAccount-navigation li:last-child {
+    margin-bottom: 0;
+}
+
+.woocommerce-MyAccount-navigation li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: var(--color-secondary);
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    gap: 15px;
+}
+
+/* Icons Heuristic (If FontAwesome is active, we can add them via pseudo-elements or expect icons in DOM) */
+/* Assuming FontAwesome is active, we add icons for better aesthetics */
+.woocommerce-MyAccount-navigation li a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--dashboard a::before {
+    content: "\f0e4";
+}
+
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--orders a::before {
+    content: "\f290";
+}
+
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--downloads a::before {
+    content: "\f019";
+}
+
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--edit-address a::before {
+    content: "\f3c5";
+}
+
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--edit-account a::before {
+    content: "\f007";
+}
+
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+    content: "\f2f5";
+}
+
+.woocommerce-MyAccount-navigation li a:hover {
+    background: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
+.woocommerce-MyAccount-navigation li.is-active a {
+    background: rgba(234, 119, 57, 0.08);
+    /* Light Primary */
+    color: var(--color-primary);
+    box-shadow: inset 4px 0 0 var(--color-primary);
+    /* RTL: Border on the right? No, standard is left padding. 
+    Actually for RTL it should be on the right. Let's fix. */
+}
+
+html[dir="rtl"] .woocommerce-MyAccount-navigation li.is-active a {
+    box-shadow: inset -4px 0 0 var(--color-primary);
+}
+
+/* 2. Content Area */
+.woocommerce-MyAccount-content {
+    flex-grow: 1;
+    background: transparent;
+    padding: 0;
+}
+
+.woocommerce-MyAccount-content p {
+    line-height: 1.8;
+    color: var(--color-secondary);
+    font-size: 15px;
+}
+
+.woocommerce-MyAccount-content mark {
+    background: transparent;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* Dashboard Greeting */
+.woocommerce-MyAccount-content>p:first-child {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-right: 4px solid var(--color-primary);
+}
+
+html[dir="ltr"] .woocommerce-MyAccount-content>p:first-child {
+    border-right: none;
+    border-left: 4px solid var(--color-primary);
+}
+
+/* 3. Orders Table Styling (Merged from my-account-orders.css) */
+.woocommerce-orders-table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 12px !important;
+    margin-top: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.woocommerce-orders-table thead th {
+    background: transparent !important;
+    border: none !important;
+    padding: 15px 20px !important;
+    font-weight: 700 !important;
+    color: var(--color-secondary) !important;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--color-bg-light) !important;
+}
+
+.woocommerce-orders-table tbody tr {
+    background: var(--color-white) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.woocommerce-orders-table tbody tr:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.woocommerce-orders-table td {
+    border: none !important;
+    padding: 20px !important;
+    vertical-align: middle !important;
+    color: var(--color-secondary) !important;
+    font-size: 15px;
+}
+
+.woocommerce-orders-table__cell-order-number a {
+    font-weight: 700 !important;
+    color: var(--color-primary) !important;
+    text-decoration: none !important;
+    background: rgba(234, 119, 57, 0.1);
+    padding: 5px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Status Color Mapping logic */
+.woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status,
+.woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status,
+.woocommerce-orders-table__row--status-on-hold .woocommerce-orders-table__cell-order-status,
+.woocommerce-orders-table__row--status-pending .woocommerce-orders-table__cell-order-status,
+.woocommerce-orders-table__row--status-cancelled .woocommerce-orders-table__cell-order-status,
+.woocommerce-orders-table__row--status-failed .woocommerce-orders-table__cell-order-status {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px 14px !important;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status {
+    background: #e3f2fd !important;
+    color: #1976d2 !important;
+}
+
+.woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status {
+    background: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+.woocommerce-orders-table__row--status-on-hold .woocommerce-orders-table__cell-order-status {
+    background: #fff3e0 !important;
+    color: #f57c00 !important;
+}
+
+.woocommerce-orders-table__row--status-pending .woocommerce-orders-table__cell-order-status {
+    background: #f3e5f5 !important;
+    color: #7b1fa2 !important;
+}
+
+.woocommerce-orders-table__row--status-cancelled .woocommerce-orders-table__cell-order-status,
+.woocommerce-orders-table__row--status-failed .woocommerce-orders-table__cell-order-status {
+    background: #ffebee !important;
+    color: #d32f2f !important;
+}
+
+/* Actions Buttons */
+.woocommerce-orders-table__cell-order-actions {
+    display: flex !important;
+    gap: 8px !important;
+    justify-content: flex-end !important;
+    flex-wrap: wrap !important;
+}
+
+html[dir="rtl"] .woocommerce-orders-table__cell-order-actions {
+    justify-content: flex-start !important;
+}
+
+.woocommerce-orders-table__cell-order-actions .button {
+    margin: 0 !important;
+    padding: 10px 18px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    background: var(--color-primary) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Addresses */
+.woocommerce-Addresses {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.woocommerce-Address {
+    flex: 1;
+    min-width: 300px;
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-bg-light);
+}
+
+.woocommerce-Address-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-bg-light);
+    padding-bottom: 10px;
+}
+
+.woocommerce-Address-title h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.woocommerce-Address-title .edit {
+    font-size: 14px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Form Fields in Account Details */
+.woocommerce-EditAccountForm {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-bg-light);
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .woocommerce-EditAccountForm {
+        padding: 20px;
+    }
+}
+
+.woocommerce-EditAccountForm .form-row {
+    margin-bottom: 25px;
+    display: block;
+    /* Ensure they don't float or flex unexpectedly */
+    width: 100%;
+}
+
+/* Two columns for first/last name */
+.woocommerce-EditAccountForm .form-row-first,
+.woocommerce-EditAccountForm .form-row-last {
+    width: 48%;
+    float: right;
+}
+
+html[dir="ltr"] .woocommerce-EditAccountForm .form-row-first,
+html[dir="ltr"] .woocommerce-EditAccountForm .form-row-last {
+    float: left;
+}
+
+.woocommerce-EditAccountForm .form-row-last {
+    margin-right: 4%;
+}
+
+html[dir="ltr"] .woocommerce-EditAccountForm .form-row-last {
+    margin-right: 0;
+    margin-left: 4%;
+}
+
+.woocommerce-EditAccountForm .form-row-wide {
+    clear: both;
+}
+
+.woocommerce-EditAccountForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 14px;
+}
+
+.woocommerce-EditAccountForm input.input-text {
+    width: 100% !important;
+    padding: 14px 16px !important;
+    border: 1px solid var(--color-bg-light) !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    background: #fdfdfd !important;
+    transition: all 0.3s !important;
+    outline: none !important;
+}
+
+.woocommerce-EditAccountForm input.input-text:focus {
+    border-color: var(--color-primary) !important;
+    background: white !important;
+    box-shadow: 0 0 0 4px rgba(234, 119, 57, 0.1) !important;
+}
+
+.woocommerce-EditAccountForm span.description,
+.woocommerce-EditAccountForm em {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 13px;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+/* Custom Password Toggle Icon (WooCommerce default) */
+.woocommerce-EditAccountForm .password-input {
+    position: relative;
+    display: block;
+}
+
+.woocommerce-EditAccountForm .show-password-input {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 15px !important;
+    width: 24px !important;
+    height: 24px !important;
+    cursor: pointer !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+    border: none !important;
+    background: transparent !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+html[dir="rtl"] .woocommerce-EditAccountForm .show-password-input {
+    right: auto !important;
+    left: 15px !important;
+}
+
+.woocommerce-EditAccountForm .show-password-input.display-password {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24'%3E%3C/path%3E%3Cline x1='1' y1='1' x2='23' y2='23'%3E%3C/line%3E%3C/svg%3E") !important;
+}
+
+.woocommerce-EditAccountForm .show-password-input:hover {
+    opacity: 1;
+}
+
+.woocommerce-EditAccountForm .show-password-input::after {
+    display: none !important;
+    /* Hide Dashicon */
+}
+
+/* Ensure input padding doesn't overlap icon */
+.woocommerce-EditAccountForm input.input-text[type="password"] {
+    padding-right: 45px !important;
+}
+
+html[dir="rtl"] .woocommerce-EditAccountForm input.input-text[type="password"] {
+    padding-right: 16px !important;
+    padding-left: 45px !important;
+}
+
+
+.woocommerce-EditAccountForm fieldset {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-bg-light);
+    padding: 30px;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+.woocommerce-EditAccountForm legend {
+    padding: 0 15px;
+    font-weight: 800;
+    color: var(--color-primary);
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.woocommerce-EditAccountForm .button {
+    background: var(--color-primary) !important;
+    color: white !important;
+    padding: 15px 40px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    display: inline-block !important;
+    margin-top: 10px !important;
+}
+
+.woocommerce-EditAccountForm .button:hover {
+    background: var(--color-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+
+    .woocommerce-EditAccountForm .form-row-first,
+    .woocommerce-EditAccountForm .form-row-last {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+/* 4. Downloads Styling */
+.woocommerce-MyAccount-content .woocommerce-info {
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-bg-light) !important;
+    border-right: 4px solid var(--color-primary) !important;
+    color: var(--color-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+html[dir="ltr"] .woocommerce-MyAccount-content .woocommerce-info {
+    border-right: none !important;
+    border-left: 4px solid var(--color-primary) !important;
+}
+
+.woocommerce-MyAccount-content .woocommerce-info .button {
+    background: var(--color-primary) !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Downloads Table */
+.show_details_button {
+    background: var(--color-bg-light) !important;
+    color: var(--color-secondary) !important;
+    padding: 5px 12px !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    font-weight: 600;
+}
+
+/* Specific Download Cells */
+.woocommerce-MyAccount-downloads .woocommerce-table__cell-download-file a {
+    color: var(--color-primary) !important;
+    font-weight: 700;
+}
+
+/* Responsive Overrides */
+@media screen and (max-width: 900px) {
+    .woocommerce-orders-table {
+        display: block !important;
+    }
+
+    .woocommerce-orders-table thead {
+        display: none !important;
+    }
+
+    .woocommerce-orders-table tbody,
+    .woocommerce-orders-table tbody tr,
+    .woocommerce-orders-table td {
+        display: flex;
+        width: 100% !important;
+        flex-wrap: wrap;
+    }
+
+    .woocommerce-orders-table tbody tr {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .woocommerce-orders-table td {
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid var(--color-bg-light) !important;
+    }
+
+    .woocommerce-orders-table td:last-child {
+        border-bottom: none !important;
+    }
+
+    .woocommerce-orders-table td::before {
+        content: attr(data-title);
+        font-weight: 700;
+    }
+
+    /* Ensure the no-downloads info box also looks good on mobile */
+    .woocommerce-MyAccount-content .woocommerce-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}

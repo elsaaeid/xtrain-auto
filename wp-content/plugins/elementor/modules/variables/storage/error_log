@@ -1,0 +1,4 @@
+[04-Jan-2026 12:36:57 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Core\Utils\Collection" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/variables/storage/variables-collection.php:17
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/variables/storage/variables-collection.php on line 17

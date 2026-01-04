@@ -1,0 +1,4 @@
+[04-Jan-2026 12:39:38 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Core\Database\Base_Database_Updater" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/atomic-widgets/database/atomic-widgets-database-updater.php:8
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/atomic-widgets/database/atomic-widgets-database-updater.php on line 8

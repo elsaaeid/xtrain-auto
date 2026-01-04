@@ -1,0 +1,628 @@
+/* My Account Login/Register Custom Styles - Refined */
+
+/* Split Wrapper */
+.login-page-split-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Form left, Image right */
+    max-width: 1300px;
+    margin: 60px auto;
+    background: var(--color-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    gap: 0;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+/* Container */
+.custom-login-container {
+    width: 50%;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    margin: 0 !important;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif, Arial, sans-serif;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-registration-cover {
+    width: 40%;
+    background: var(--color-bg-current);
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+
+.login-registration-cover .cover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    z-index: 1;
+}
+
+.login-registration-cover .cover-img.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Mobile Responsive Split */
+@media (max-width: 991px) {
+    .login-page-split-wrapper {
+        flex-direction: column-reverse;
+        margin: 40px 20px;
+        border: none;
+        min-height: auto;
+        align-items: center;
+    }
+
+    .custom-login-container {
+        width: 80%;
+        border-radius: 8px;
+        padding: 40px 30px;
+    }
+
+    .login-registration-cover {
+        border-radius: 8px;
+        height: 300px;
+        margin-bottom: 20px;
+        flex: none;
+        width: 80%;
+    }
+}
+
+/* Tabs */
+.login-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-bg-light);
+    padding-bottom: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 300px;
+}
+
+.login-tab-item {
+    /* Large readable font */
+    font-weight: 700;
+    color: var(--color-text-light);
+    /* Light gray for inactive */
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    flex: 1;
+    text-align: center;
+}
+
+.login-tab-item.active {
+    color: var(--color-accent);
+}
+
+.login-tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    /* Push down to overlap border */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent);
+}
+
+.login-subtitle {
+    text-align: center;
+    color: var(--color-text-light);
+    /* Muted blue-gray */
+    font-size: 15px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+#customer_login .u-column1.active,
+#customer_login .u-column2.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Form Rows */
+.woocommerce-form-row {
+    margin-bottom: 25px;
+    /* More spacing */
+}
+
+.woocommerce-form-row label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.woocommerce-Input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    /* Very light slate */
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--color-dark);
+    background-color: var(--color-bg);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.woocommerce-Input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(244, 124, 51, 0.1);
+}
+
+/* Actions Row */
+.login-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* Remember Me Checkbox */
+.woocommerce-form-login__rememberme {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 400 !important;
+    /* Not bold */
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Hide default checkbox and style custom if needed, or stick to default for simplicity first. 
+   Image shows a standard looking checkbox on the RIGHT of the text? 
+   No, RTL: [Checkbox] [Text]. 
+   Wait, if I just use flex-direction: row-reverse on the label it might be easier to match "Text Checkbox" visual if that's what's needed.
+   Standard arabic usually puts checkbox on right, text on left. 
+   Let's ensure they are cleanly aligned.
+*/
+
+.woocommerce-form-login__rememberme span {
+    order: 1;
+    /* Text first (Right) */
+}
+
+.woocommerce-form-login__rememberme input {
+    order: 2;
+    /* Checkbox second (Left relative to text) */
+    margin-right: 8px !important;
+    margin-left: 0 !important;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-accent);
+    /* Orange border */
+    border-radius: 4px;
+    background-color: var(--color-bg);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.woocommerce-form-login__rememberme input:checked {
+    background-color: var(--color-bg);
+    border-color: var(--color-accent);
+}
+
+.woocommerce-form-login__rememberme input:checked::after {
+    content: '';
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-accent);
+    /* Orange checkmark */
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+}
+
+/* Revert order if standard is preferred, let's stick to standard flex gap */
+
+
+/* Lost Password */
+.woocommerce-LostPassword {
+    margin: 0;
+}
+html[dir="rtl"] .custom-login-container {
+    direction: rtl;
+}
+html[dir="ltr"] .custom-login-container {
+    direction: ltr;
+}
+
+.woocommerce-LostPassword a {
+    color: var(--color-accent);
+    /* Orange */
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.woocommerce-LostPassword a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.woocommerce-form-login__submit,
+.woocommerce-form-register__submit {
+    width: 100%;
+    background-color: var(--color-secondary) !important;
+    /* Dark */
+    color: var(--color-bg) !important;
+    border: none;
+    padding: 10px !important;
+    border-radius: 6px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.woocommerce-form-login__submit:hover,
+.woocommerce-form-register__submit:hover {
+    background-color: var(--color-dark) !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .custom-login-container {
+        padding: 30px 20px;
+        margin: 20px 10px;
+    }
+
+    .login-tabs-nav {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .login-tab-item {
+        font-size: 18px;
+    }
+}
+
+/* Register Form Specifics */
+.terms-row {
+    margin-top: 10px;
+}
+
+.terms-row label {
+    margin-bottom: 0 !important;
+    cursor: pointer;
+    font-weight: 400 !important;
+    color: var(--color-secondary);
+    font-size: 14px;
+}
+
+.terms-row input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-accent);
+    /* Orange border */
+    border-radius: 4px;
+    background-color: var(--color-bg);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terms-row input[type="checkbox"]:checked {
+    background-color: var(--color-bg);
+    /* White background */
+    border-color: var(--color-accent);
+}
+
+.terms-row input[type="checkbox"]:checked::after {
+    content: '';
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-accent);
+    /* Orange checkmark */
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+}
+
+/* RTL Layout for Register Checkbox */
+/* Image shows: [Checkbox] [Text] aligned to the RIGHT.
+   Standard RTL flow puts elements start-to-end (Right-to-Left).
+   So <label> then <input> would appear [Label] [Input].
+   We want [Input] [Label].
+   So we should use flex-direction: row-reverse or change DOM.
+   The DOM is <div class="terms-row"><label><input/></label>...</div> or similiar.
+   I implemented <div class="terms-row"><label>Text</label><input/></div>
+   So standard RTL is [Label] [Input].
+   To get [Input] [Label], we need the Input to be visually "first" (Right).
+   BUT wait, standard Arabic reading is "I agree [Check]". No, standard UI is [Check] "I agree".
+   Let's check image again: [Check] "موافقة..."
+   So we need Input then Label.
+*/
+
+[dir="rtl"] .terms-row {
+    flex-direction: row-reverse;
+    /* Puts Input (2nd child) on Right, Label (1st child) on Left */
+    justify-content: flex-end;
+    /* Align the group to the Right */
+}
+
+/* Terms Text highlight */
+.terms-link-text {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* Hide Privacy Policy Text */
+.woocommerce-privacy-policy-text {
+    display: none !important;
+}
+
+
+/* --- Password Visibility Toggle Override (Fixing core WooCommerce conflict) --- */
+
+/* Ensure room for the icon on the left */
+.custom-login-container input.woocommerce-Input[type="password"],
+.custom-login-container input.woocommerce-Input[type="text"] {
+    padding-left: 45px !important;
+}
+
+/* Ensure the wrapper is the positioning context for the absolute icon */
+.password-row {
+    position: relative !important;
+}
+
+/* Stop WooCommerce from injecting its own eye icon */
+.custom-login-container .show-password-input {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Position and style our custom eye icon */
+.custom-login-container .custom-password-eye {
+    position: absolute !important;
+    transform: translateY(0px) !important;
+    cursor: pointer !important;
+    z-index: 99 !important;
+    /* Large Hit Area */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all !important;
+    background: transparent !important;
+}
+html[dir="ltr"] .custom-login-container .custom-password-eye {
+    top: 59% !important;
+    left: auto !important;
+    right: 15px !important;
+}
+html[dir="rtl"] .custom-login-container .custom-password-eye {
+    top: 50% !important;
+    left: 15px !important;
+    right: auto !important;
+}
+
+/* Default Neutral Icon (When Password is HIDDEN - show normal eye) */
+.custom-login-container .custom-password-eye::before {
+    content: "" !important;
+    display: block !important;
+    width: 22px !important;
+    height: 22px !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3C/svg%3E") !important;
+    transition: background-image 0.2s ease !important;
+}
+
+/* Hover HIDDEN: Change to Primary Orange Eye */
+.custom-login-container .custom-password-eye:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23EA7739' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3C/svg%3E") !important;
+}
+
+/* Visible State (When Password is SHOWN - show eye-off slash icon) */
+.custom-login-container .custom-password-eye.visible::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24'%3E%3C/path%3E%3Cline x1='1' y1='1' x2='23' y2='23'%3E%3C/line%3E%3C/svg%3E") !important;
+}
+
+/* Hover VISIBLE: Orange slash icon */
+.custom-login-container .custom-password-eye.visible:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23EA7739' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24'%3E%3C/path%3E%3Cline x1='1' y1='1' x2='23' y2='23'%3E%3C/line%3E%3C/svg%3E") !important;
+}
+
+/* Hide Default Browser Password Toggles */
+.custom-login-container input::-ms-reveal,
+.custom-login-container input::-ms-clear,
+.custom-login-container input::-webkit-contacts-auto-fill-button,
+.custom-login-container input::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}
+
+.lost-password-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.lost-password-title {
+    color: var(--color-accent) !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+}
+
+.lost-password-subtitle {
+    color: var(--color-text-light) !important;
+    font-size: 14px !important;
+    margin-bottom: 0 !important;
+}
+
+.custom-lost-password-container form.lost_reset_password {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.custom-lost-password-container form.lost_reset_password p.form-row {
+    margin-bottom: 25px !important;
+}
+
+.custom-lost-password-container form.lost_reset_password .woocommerce-Button {
+    width: 100% !important;
+    background-color: var(--color-secondary) !important;
+    /* Dark Gray from Image */
+    color: var(--color-bg) !important;
+    padding: 15px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    /* Slightly more rounded as per image */
+    border: none !important;
+}
+.custom-lost-password-container form.lost_reset_password .woocommerce-Button:hover {
+    background-color: var(--color-dark) !important;
+}
+
+.custom-lost-password-container form.lost_reset_password label {
+    font-weight: 500 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+/* Hide default page title on Account and Lost Password pages */
+.woocommerce-account .entry-title,
+.woocommerce-lost-password .entry-title,
+.page-header .entry-title {
+    display: none !important;
+}
+
+/* --- WooCommerce Notices (Errors/Messages) Styling --- */
+.woocommerce-notices-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    display: none;
+    /* Hidden by default */
+}
+
+/* Show the wrapper only if it contains visible notices */
+.woocommerce-notices-wrapper:has(.show-notice),
+.woocommerce-notices-wrapper:has(li) {
+    display: block !important;
+}
+
+/* Only style and show notices if they have content (contain an li) */
+.woocommerce-error li,
+.woocommerce-message li,
+.woocommerce-info li {
+    display: block !important;
+}
+
+.woocommerce-error,
+.woocommerce-message,
+.woocommerce-info {
+    display: none !important;
+    /* Hidden by default */
+}
+
+/* Show only if containing list items */
+.woocommerce-error:has(li),
+.woocommerce-message:has(li),
+.woocommerce-info:has(li) {
+    list-style: none !important;
+    padding: 15px 20px !important;
+    margin: 0 0 25px 0 !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: 1px solid transparent !important;
+    width: 100% !important;
+}
+
+.woocommerce-error {
+    background-color: rgba(234, 119, 57, 0.08) !important;
+    /* Light version of primary/accent */
+    color: var(--color-heart-active) !important;
+    border-color: rgba(234, 119, 57, 0.15) !important;
+    flex-direction: row-reverse;
+}
+
+.woocommerce-message {
+    background-color: rgba(50, 176, 88, 0.08) !important;
+    /* Light version of success */
+    color: var(--color-success) !important;
+    border-color: rgba(50, 176, 88, 0.15) !important;
+    flex-direction: row-reverse;
+}
+
+.woocommerce-error li,
+.woocommerce-message li {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.woocommerce-error::before {
+    content: "⚠️";
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.woocommerce-message::before {
+    content: "✅";
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.woocommerce-error li::marker,
+.woocommerce-message li::marker {
+    display: none !important;
+    content: "" !important;
+}

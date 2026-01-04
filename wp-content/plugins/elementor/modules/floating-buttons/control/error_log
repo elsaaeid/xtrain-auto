@@ -1,0 +1,4 @@
+[04-Jan-2026 12:39:34 UTC] PHP Fatal error:  Uncaught Error: Class "Elementor\Control_Hover_Animation" not found in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/floating-buttons/control/hover-animation-floating-buttons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/modules/floating-buttons/control/hover-animation-floating-buttons.php on line 7

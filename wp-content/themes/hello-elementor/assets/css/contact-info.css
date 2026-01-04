@@ -1,0 +1,50 @@
+/* ===== Contact Info Section ===== */
+/* Each item */
+.contact-item {
+    margin-bottom: 13px;
+}
+
+/* Title (رقم الهاتف / البريد الإلكتروني / العنوان) */
+.contact-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 3px;
+}
+
+/* Values (phone, email, address) */
+.contact-item a,
+.contact-item p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+/* Hover for links */
+.contact-item a:hover {
+    color: var(--color-primary);
+}
+
+/* Phone spacing tweak */
+.contact-phone a {
+    letter-spacing: 0.5px;
+}
+
+/* Address line-break handling */
+.contact-address p {
+    white-space: pre-line;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .contact-label {
+        font-size: 15px;
+    }
+
+    .contact-item a,
+    .contact-item p {
+        font-size: 15px;
+    }
+}

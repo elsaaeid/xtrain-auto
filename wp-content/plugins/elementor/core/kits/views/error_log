@@ -1,0 +1,4 @@
+[04-Jan-2026 15:14:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function esc_html__() in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/kits/views/panel.php:12
+Stack trace:
+#0 {main}
+  thrown in /home2/ipartsksa/public_html/said-staging/wp-content/plugins/elementor/core/kits/views/panel.php on line 12
