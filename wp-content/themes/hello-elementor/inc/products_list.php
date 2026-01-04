@@ -111,8 +111,16 @@ function products_list_shortcode($atts) {
                         <div class="item-price">
                             <?php
                             $wmc_current = function_exists('WOOMULTI_CURRENCY_F_Data') ? WOOMULTI_CURRENCY_F_Data::get_ins()->get_current_currency() : get_woocommerce_currency();
-                            $converted_regular = $regular_price ? (function_exists('wmc_get_price') ? wmc_get_price($regular_price) : $regular_price) : '';
-                            $converted_sale = $sale_price ? (function_exists('wmc_get_price') ? wmc_get_price($sale_price) : $sale_price) : '';
+                            if ( function_exists( 'icl_object_id' ) && function_exists( 'wcml_multi_currency' ) ) {
+                                $converted_regular = $regular_price ? wcml_multi_currency()->prices->get_product_price_in_currency( $product_obj->get_id(), null, true ) : '';
+                                $converted_sale = $sale_price ? wcml_multi_currency()->prices->get_product_price_in_currency( $product_obj->get_id(), null, true ) : '';
+                            } elseif ( function_exists( 'pll_current_language' ) && function_exists( 'wcml_multi_currency' ) ) {
+                                $converted_regular = $regular_price ? wcml_multi_currency()->prices->get_product_price_in_currency( $product_obj->get_id(), null, true ) : '';
+                                $converted_sale = $sale_price ? wcml_multi_currency()->prices->get_product_price_in_currency( $product_obj->get_id(), null, true ) : '';
+                            } else {
+                                $converted_regular = $regular_price ? (function_exists('wmc_get_price') ? wmc_get_price($regular_price) : $regular_price) : '';
+                                $converted_sale = $sale_price ? (function_exists('wmc_get_price') ? wmc_get_price($sale_price) : $sale_price) : '';
+                            }
                                 if ($is_on_sale && $sale_price) : ?>
                                     <span class="price-regular"><?php echo hello_localized_price($converted_regular, $wmc_current); ?></span>
                                     <span class="price-sale"><?php echo hello_localized_price($converted_sale, $wmc_current); ?></span>
